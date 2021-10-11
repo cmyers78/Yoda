@@ -6,11 +6,24 @@
 //
 
 import Foundation
+import UIKit
 
 class AppCoordinator: Coordinator {
+	let window: UIWindow
+	let rootViewController: UINavigationController
 	
+	init(window: UIWindow) {
+		self.window = window
+		rootViewController = UINavigationController()
+		
+		let overviewVC = OverviewViewController()
+		overviewVC.view.backgroundColor = .red
+		rootViewController.pushViewController(overviewVC, animated: true)
+	}
 	
 	func start() {
 		print("Start Main VC or child coordinator")
+		window.rootViewController = rootViewController
+		window.makeKeyAndVisible()
 	}
 }
