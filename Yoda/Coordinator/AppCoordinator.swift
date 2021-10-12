@@ -18,6 +18,7 @@ class AppCoordinator: Coordinator {
 		
 		let overviewVC = OverviewViewController()
 		overviewVC.view.backgroundColor = .red
+		overviewVC.title = "Star Wars Overview"
 		rootViewController.pushViewController(overviewVC, animated: true)
 	}
 	
